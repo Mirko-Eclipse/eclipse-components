@@ -5,7 +5,7 @@ export default {
 };
 
 export const Bullet = (args) => {
-  const list = createList(args);
+  const list = createList({mode:'bullet'});
   list.appendChild(
     createListItem({ mode: "primary", text: "something amazing" })
   );
