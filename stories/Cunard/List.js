@@ -9,6 +9,6 @@ export const createList = (args) => {
 export const createListItem = (args) => {
   const li = document.createElement("li");
   li.className = ["eclipse-li-cunard eclipse-li-" + args.mode + "-cunard"];
-  li.innerText = args.item;
+  li.innerText = args.text;
   return li;
 };

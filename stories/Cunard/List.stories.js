@@ -1,13 +1,17 @@
-import { createList, createListItem } from "./List"
+import { createList, createListItem } from "./List";
 
 export default {
-    title: 'Cunard/List'
-}
+  title: "Cunard/List",
+};
 
 export const Bullet = (args) => {
-    const list = createList(args);
-    list.appendChild(createListItem({mode:'primary'}));
-    list.appendChild(createListItem({mode:'primary'}));
-    list.appendChild(createListItem({mode:'primary'}));
-    return list;
-}
+  const list = createList(args);
+  list.appendChild(
+    createListItem({ mode: "primary", text: "something amazing" })
+  );
+  list.appendChild(
+    createListItem({ mode: "primary", text: "discount for a group of persons" })
+  );
+  list.appendChild(createListItem({ mode: "primary", text: "one last item" }));
+  return list;
+};
