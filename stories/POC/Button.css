@@ -1,0 +1,32 @@
+.eclipse-btn-poc {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  border: none;
+  padding: 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.eclipse-btn-primary-poc {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(71, 71, 252),
+    rgb(130, 130, 254)
+  );
+  color: white;
+}
+.eclipse-btn-primary-poc:hover {
+  opacity: 0.8;
+}
+
+.eclipse-btn-secondary-poc {
+  background-color: white;
+  border: 1px solid rgb(77, 77, 248);
+  color: rgb(77, 77, 248);
+}
+
+.eclipse-btn-secondary-poc:hover {
+  background-color: rgb(244, 244, 244);
+}

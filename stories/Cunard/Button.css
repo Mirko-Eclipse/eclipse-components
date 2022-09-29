@@ -1,0 +1,31 @@
+.eclipse-btn-cunard {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  border: none;
+  padding: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.eclipse-btn-primary-cunard {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(255, 76, 17),
+    rgb(248, 138, 79)
+  );
+  color: white;
+}
+.eclipse-btn-primary-cunard:hover {
+  opacity: 0.8;
+}
+
+.eclipse-btn-secondary-cunard {
+  background-color: white;
+  border: 1px solid rgb(254, 70, 9);
+  color: rgb(254, 70, 9);
+}
+
+.eclipse-btn-secondary-cunard:hover {
+  background-color: rgb(244, 244, 244);
+}
