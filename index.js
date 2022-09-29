@@ -12,6 +12,10 @@ h1 &&
     ` <ul class="eclipse-ul-cunard eclipse-ul-undefined-cunard">
     <li class="eclipse-li-cunard eclipse-li-primary-cunard">first item</li>
     <li class="eclipse-li-cunard eclipse-li-primary-cunard">second item</li>
-    <li class="eclipse-li-cunard eclipse-li-primary-cunard">third item</li>
 </ul>`
+  );
+h1 &&
+  h1.insertAdjacentHTML(
+    "afterend",
+    `<a href="./other-page.html">Go to other page</a>`
   );
