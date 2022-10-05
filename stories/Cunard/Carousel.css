@@ -6,7 +6,8 @@
   list-style: none;
   display: flex;
   flex-direction: row;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
