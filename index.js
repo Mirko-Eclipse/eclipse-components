@@ -23,5 +23,5 @@ h1 &&
 h1 &&
   h1.insertAdjacentHTML(
     "afterend",
-    '<div class="eclipse-carousel" style="height: 300px; width: 500px;"><li class="eclipse-carousel__container"></li></div>'
+    '<div class="eclipse-carousel" style="height: 300px; width: 500px;"><li class="eclipse-carousel__container" style="height: 300px; width: 500px;"><picture style="height: 300px; width: 500px;"><source srcset="https://assets.traveltriangle.com/blog/wp-content/uploads/2018/03/acj-2003-beautiful-landscapes-around-the-world.jpg"><img loading="lazy" style="height: 300px; width: 500px;"></picture><picture style="height: 300px; width: 500px;"><source srcset="http://cdn.cnn.com/cnnnext/dam/assets/190517091026-07-unusual-landscapes-travel.jpg"><img loading="lazy" style="height: 300px; width: 500px;"></picture><picture style="height: 300px; width: 500px;"><source srcset="https://media.macphun.com/img/uploads/customer/blog/504/15360610675b8e6e8b52bd36.49629027.jpg?q=85&amp;w=1680"><img loading="lazy" style="height: 300px; width: 500px;"></picture></li></div>'
   );

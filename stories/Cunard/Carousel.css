@@ -16,3 +16,7 @@
 .eclipse-carousel__container::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
+
+.eclipse-carousel__picture {
+  scroll-snap-align: center;
+}

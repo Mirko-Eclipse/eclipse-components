@@ -6,7 +6,7 @@ export const createCarouselContainer = (args) => {
   container.style.width = args.width;
   container.className = "eclipse-carousel__container";
   args.picturesUrls.map((pictureUrl) => {
-    args = {...args, pictureUrl}
+    args = { ...args, pictureUrl };
     container.appendChild(createPicture(args));
   });
   return container;
@@ -14,7 +14,7 @@ export const createCarouselContainer = (args) => {
 
 export const createCarousel = (args) => {
   const carousel = document.createElement("div");
-  carousel.className = ["eclipse-carousel"];
+  carousel.className = "eclipse-carousel";
   carousel.style.height = args.height;
   carousel.style.width = args.width;
   carousel.appendChild(createCarouselContainer(args));
@@ -25,12 +25,13 @@ export const createPicture = (args) => {
   const picture = document.createElement("picture");
   picture.style.height = args.height;
   picture.style.width = args.width;
+  picture.className = "eclipse-carousel__picture";
   const source = document.createElement("source");
   source.srcset = args.pictureUrl;
-  const img = document.createElement('img')
+  const img = document.createElement("img");
   img.style.height = args.height;
   img.style.width = args.width;
-  img.loading = 'lazy'
+  img.loading = "lazy";
   picture.appendChild(source);
   picture.appendChild(img);
   return picture;
