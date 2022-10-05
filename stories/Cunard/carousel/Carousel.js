@@ -63,7 +63,7 @@ export const createArrow = (args, direction) => {
   svg.style.width = args.arrows.width;
   const path = document.createElement("path");
   if (direction === "right") {
-    path.setAttribute("trasform", "scale(-1 1) translate(-20 0)");
+    path.setAttribute("transform", "scale(-1 1) translate(-20 0)");
   }
   path.setAttribute("fill", args.arrows.svgFill);
   path.setAttribute("d", args.arrows.svgPath);
