@@ -42,23 +42,29 @@ export const createPicture = (args) => {
 
 export const createArrow = (args, direction) => {
   const button = document.createElement("button");
-  button.style.top = (parseInt(args.height.replace("px", "")) / 2) - parseInt(args.arrows.height) / 2 + "px";
+  button.style.top =
+    parseInt(args.height.replace("px", "")) / 2 -
+    parseInt(args.arrows.height) +
+    "px";
   button.classList = [
     "eclipse-carousel__arrow",
     "eclipse-carousel__arrow__" + direction,
   ].join(" ");
   switch (direction) {
     case "left":
-      button.style.left = '1rem';
+      button.style.left = "1rem";
       break;
     case "right":
-      button.style.right = '1rem';
+      button.style.right = "1rem";
       break;
   }
   const svg = document.createElement("svg");
   svg.style.height = args.arrows.height;
   svg.style.width = args.arrows.width;
   const path = document.createElement("path");
+  if (direction === "right") {
+    path.setAttribute("trasform", "scale(-1 1) translate(-20 0)");
+  }
   path.setAttribute("fill", args.arrows.svgFill);
   path.setAttribute("d", args.arrows.svgPath);
   svg.appendChild(path);
