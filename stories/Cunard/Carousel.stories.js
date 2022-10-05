@@ -7,8 +7,8 @@ export default {
 
 const Template = (args) => createCarousel(args);
 
-export const Bullets = Template.bind({});
-Bullets.args = {
+export const Default = Template.bind({});
+Default.args = {
   width: '500px',
   height: '300px'
 }

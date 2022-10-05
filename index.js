@@ -19,3 +19,9 @@ h1 &&
     "afterend",
     `<a href="./other-page.html">Go to other page</a>`
   );
+
+h1 &&
+  h1.insertAdjacentHTML(
+    "afterend",
+    '<div class="eclipse-carousel" style="height: 300px; width: 500px;"><li class="eclipse-carousel__container"></li></div>'
+  );
