@@ -1,0 +1,7 @@
+.eclipse-carousel {
+  background-color: blueviolet;
+  margin: 0 auto;
+}
+.eclipse-carousel__container {
+  list-style: none;
+}
