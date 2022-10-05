@@ -17,7 +17,10 @@ export const createCarousel = (args) => {
   carousel.className = "eclipse-carousel";
   carousel.style.height = args.height;
   carousel.style.width = args.width;
+  carousel.appendChild(createArrow(args, "left"));
   carousel.appendChild(createCarouselContainer(args));
+  carousel.appendChild(createArrow(args, "right"));
+
   return carousel;
 };
 
@@ -35,4 +38,30 @@ export const createPicture = (args) => {
   picture.appendChild(source);
   picture.appendChild(img);
   return picture;
+};
+
+export const createArrow = (args, direction) => {
+  const button = document.createElement("button");
+  button.style.top = (parseInt(args.height.replace("px", "")) / 2) - parseInt(args.arrows.height) / 2 + "px";
+  button.classList = [
+    "eclipse-carousel__arrow",
+    "eclipse-carousel__arrow__" + direction,
+  ].join(" ");
+  switch (direction) {
+    case "left":
+      button.style.left = '1rem';
+      break;
+    case "right":
+      button.style.right = '1rem';
+      break;
+  }
+  const svg = document.createElement("svg");
+  svg.style.height = args.arrows.height;
+  svg.style.width = args.arrows.width;
+  const path = document.createElement("path");
+  path.setAttribute("fill", args.arrows.svgFill);
+  path.setAttribute("d", args.arrows.svgPath);
+  svg.appendChild(path);
+  button.appendChild(svg);
+  return button;
 };
