@@ -1,4 +1,5 @@
 import "./Carousel.css";
+import globalListener from "./globalListener";
 import updateCarouselSlide from "./updateCarouselSlide";
 
 export const createCarouselContainer = (args) => {
@@ -45,18 +46,7 @@ export const createPicture = (args) => {
 
 export const createArrow = (args, direction) => {
   const button = document.createElement("button");
-  button.addEventListener("click", (event) => {
-    if (event.target.dataset.eclipseAction === "eclipse-carousel: left click") {
-      updateCarouselSlide(event.target, {
-        type: "left",
-      });
-    }
-    if (event.target.dataset.eclipseAction === "eclipse-carousel: right click") {
-      updateCarouselSlide(event.target, {
-        type: "right",
-      });
-    }
-  });
+  document.addEventListener("click", globalListener);
   button.style.top =
     parseInt(args.height.replace("px", "")) / 2 -
     parseInt(args.arrows.height) +
