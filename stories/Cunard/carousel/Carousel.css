@@ -34,3 +34,11 @@
   border: 1px solid white;
   position: absolute;
 }
+.eclipse-carousel__arrow:hover {
+  cursor: pointer;
+}
+
+.eclipse-carousel__svg,
+.eclipse-carousel__path {
+  pointer-events: none;
+}

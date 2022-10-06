@@ -1,12 +1,13 @@
 import "./Carousel.css";
+import updateCarouselSlide from "./updateCarouselSlide";
 
 export const createCarouselContainer = (args) => {
   const container = document.createElement("li");
   container.style.height = args.height;
   container.style.width = args.width;
   container.className = "eclipse-carousel__container";
-  args.picturesUrls.map((pictureUrl) => {
-    args = { ...args, pictureUrl };
+  args.picturesUrls.map((pictureUrl, pictureIndex) => {
+    args = { ...args, pictureUrl, pictureIndex };
     container.appendChild(createPicture(args));
   });
   return container;
@@ -14,6 +15,7 @@ export const createCarouselContainer = (args) => {
 
 export const createCarousel = (args) => {
   const carousel = document.createElement("div");
+  carousel.setAttribute("data-eclipse-carousel-index", 0);
   carousel.className = "eclipse-carousel";
   carousel.style.height = args.height;
   carousel.style.width = args.width;
@@ -29,6 +31,7 @@ export const createPicture = (args) => {
   picture.style.height = args.height;
   picture.style.width = args.width;
   picture.className = "eclipse-carousel__picture";
+  picture.setAttribute('data-eclipse-id', args.pictureIndex);
   const source = document.createElement("source");
   source.srcset = args.pictureUrl;
   const img = document.createElement("img");
@@ -42,6 +45,18 @@ export const createPicture = (args) => {
 
 export const createArrow = (args, direction) => {
   const button = document.createElement("button");
+  button.addEventListener("click", (event) => {
+    if (event.target.dataset.eclipseAction === "eclipse-carousel: left click") {
+      updateCarouselSlide(event.target, {
+        type: "left",
+      });
+    }
+    if (event.target.dataset.eclipseAction === "eclipse-carousel: right click") {
+      updateCarouselSlide(event.target, {
+        type: "right",
+      });
+    }
+  });
   button.style.top =
     parseInt(args.height.replace("px", "")) / 2 -
     parseInt(args.arrows.height) +
@@ -53,20 +68,24 @@ export const createArrow = (args, direction) => {
   switch (direction) {
     case "left":
       button.style.left = "1rem";
+      button.dataset.eclipseAction = "eclipse-carousel: left click";
       break;
     case "right":
       button.style.right = "1rem";
+      button.dataset.eclipseAction = "eclipse-carousel: right click";
       break;
   }
   const svg = document.createElement("svg");
   svg.style.height = args.arrows.height;
   svg.style.width = args.arrows.width;
+  svg.className = "eclipse-carousel__svg";
   const path = document.createElement("path");
   if (direction === "right") {
     path.setAttribute("transform", "scale(-1 1) translate(-20 0)");
   }
   path.setAttribute("fill", args.arrows.svgFill);
   path.setAttribute("d", args.arrows.svgPath);
+  path.className = "eclipse-carousel__path";
   svg.appendChild(path);
   button.appendChild(svg);
   return button;

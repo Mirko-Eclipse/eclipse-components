@@ -2,6 +2,7 @@ import { createCarousel, createCarouselContainer } from "./Carousel";
 
 export default {
   title: "Cunard/Carousel",
+  argTypes: { onClick: { action: "clicked" } },
 };
 
 const Template = (args) => createCarousel(args);
